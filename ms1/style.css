@@ -16,8 +16,8 @@
     --slug-blue-glow: rgba(47, 155, 255, 0.45);
     --border-color: rgba(255, 255, 255, 0.08);
     --font-primary: 'Inter', sans-serif;
-    --font-heading: 'Orbitron', sans-serif;
-    --font-sub: 'Syne', sans-serif;
+    --font-heading: 'Rubik Wet Paint', system-ui;
+    --font-sub: 'Rubik Wet Paint', system-ui;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
