@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MugzySlugs | Streamer, Musician & Gamer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Slug Trail Canvas Background -->
+    <canvas id="trail-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">
+            <span class="neon-text-green">Mugzy</span><span class="neon-text-purple">Slugs</span>
+        </div>
+        <nav>
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#music" class="nav-link">Music</a>
+            <a href="#stream" class="nav-link">Stream</a>
+        </nav>
+        <div class="header-actions">
+            <a href="https://www.twitch.tv/prince_muggzy" target="_blank" class="live-status-pill offline">
+                <span class="pulse-dot"></span>
+                <span class="status-label">OFFLINE</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="badge-container">
+                    <span class="badge purple-badge"><i class="fa-brands fa-twitch"></i> Twitch Affiliate</span>
+                    <span class="badge green-badge"><i class="fa-solid fa-music"></i> Emo Rap Artist</span>
+                </div>
+                <h1 class="hero-title">Welcome to the <br><span class="slime-text">Slug Pit</span></h1>
+                <p class="hero-subtitle">
+                    Official hub for <strong>MugzySlugs</strong> (Prince_Muggzy)—Twitch content creator, military veteran, and dark-trap/emo-rap music producer. Join the slow-moving, high-energy community.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://www.twitch.tv/prince_muggzy" target="_blank" class="btn btn-primary">
+                        <i class="fa-brands fa-twitch"></i> Follow on Twitch
+                    </a>
+                    <a href="#music" class="btn btn-secondary">
+                        <i class="fa-solid fa-play"></i> Listen to Beats
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="glow-sphere green-glow"></div>
+                <div class="glow-sphere purple-glow"></div>
+                <div class="slug-avatar-container">
+                    <!-- Synthesized Slug Artwork via CSS -->
+                    <div class="slug-art">
+                        <div class="slug-body">
+                            <div class="slug-eye eye-left"></div>
+                            <div class="slug-eye eye-right"></div>
+                            <div class="slug-antenna antenna-left"></div>
+                            <div class="slug-antenna antenna-right"></div>
+                        </div>
+                        <div class="slug-slime-trail"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="section-header">
+                <h2 class="section-title">Who is <span class="neon-text-green">Mugzy?</span></h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon"><i class="fa-solid fa-gamepad"></i></div>
+                    <h3>Gamer & Streamer</h3>
+                    <p>Known for streaming intense games like <em>Dead by Daylight</em>, deep economies like <em>Albion Online</em>, and exploring upcoming games like <em>ARC Raiders</em>. The stream is focused on chill interactions, chaotic community gameplay, and good vibes.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Military Veteran</h3>
+                    <p>A proud military veteran who has transitioned his leadership, discipline, and camaraderie into building a tight-knit, highly supportive community. Everyone is welcome in the slug army.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>#420Friendly & Cozy</h3>
+                    <p>Providing a relaxed, non-judgmental space to wind down after a long day. Expect late-night chats, hilarious memes, and ambient background tunes to set the perfect mood.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Hub Section -->
+        <section id="music" class="music-section">
+            <div class="section-header">
+                <h2 class="section-title">Latest <span class="neon-text-purple">Releases</span></h2>
+                <div class="accent-line bg-purple"></div>
+            </div>
+            
+            <div class="music-container">
+                <!-- Custom Player -->
+                <div class="custom-player">
+                    <div class="player-header">
+                        <span class="player-tag">NOW PLAYING</span>
+                        <div class="visualizer-bars" id="visualizer">
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="player-info">
+                        <h3 id="current-title">NUMBIN</h3>
+                        <p id="current-genre">Lil Peep x MugzySlugs Type Emo Rap</p>
+                    </div>
+                    <div class="player-controls">
+                        <button class="player-btn" id="prev-btn"><i class="fa-solid fa-backward-step"></i></button>
+                        <button class="player-btn play-main" id="play-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="player-btn" id="next-btn"><i class="fa-solid fa-forward-step"></i></button>
+                    </div>
+                    <div class="progress-container">
+                        <span class="time-stamp" id="curr-time">0:00</span>
+                        <div class="progress-bar-bg" id="progress-bg">
+                            <div class="progress-bar-fill" id="progress-fill"></div>
+                        </div>
+                        <span class="time-stamp" id="total-time">2:45</span>
+                    </div>
+                </div>
+
+                <!-- Playlist -->
+                <div class="playlist-container">
+                    <div class="playlist-track active" data-index="0" data-title="NUMBIN" data-genre="Lil Peep x MugzySlugs Type Emo Rap" data-duration="2:45">
+                        <span class="track-number">01</span>
+                        <div class="track-details">
+                            <h4>NUMBIN</h4>
+                            <p>Emo Rap / Dark Vibe</p>
+                        </div>
+                        <span class="track-duration">2:45</span>
+                    </div>
+                    <div class="playlist-track" data-index="1" data-title="Social Suicide" data-genre="Melancholic Dark Trap Original" data-duration="3:12">
+                        <span class="track-number">02</span>
+                        <div class="track-details">
+                            <h4>Social Suicide</h4>
+                            <p>Dark Trap / Emo</p>
+                        </div>
+                        <span class="track-duration">3:12</span>
+                    </div>
+                    <div class="playlist-track" data-index="2" data-title="Moving Too Fast" data-genre="Emotional Rap (feat. Mad_Ghost)" data-duration="2:58">
+                        <span class="track-number">03</span>
+                        <div class="track-details">
+                            <h4>Moving Too Fast</h4>
+                            <p>Emotional Rap / Collab</p>
+                        </div>
+                        <span class="track-duration">2:58</span>
+                    </div>
+                    <div class="playlist-track" data-index="3" data-title="Tokyo Drift" data-genre="Dark Trap Love Song (feat. Mad_Ghost)" data-duration="3:30">
+                        <span class="track-number">04</span>
+                        <div class="track-details">
+                            <h4>Tokyo Drift</h4>
+                            <p>Dark Trap / Love Emo</p>
+                        </div>
+                        <span class="track-duration">3:30</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stream / Live Simulator Section -->
+        <section id="stream" class="stream-section">
+            <div class="section-header">
+                <h2 class="section-title">The <span class="neon-text-green">Live Pit</span></h2>
+                <div class="accent-line"></div>
+            </div>
+            
+            <div class="stream-grid">
+                <!-- Stream Mockup -->
+                <div class="stream-screen">
+                    <div class="stream-screen-header">
+                        <div class="stream-title">prince_muggzy - Dead by Daylight - Emo Vibes Only</div>
+                        <div class="viewer-count"><i class="fa-solid fa-user"></i> 142 viewers</div>
+                    </div>
+                    <div class="stream-video-placeholder">
+                        <div class="stream-overlay">
+                            <i class="fa-brands fa-twitch twitch-giant-icon"></i>
+                            <h3>Stream is currently Offline</h3>
+                            <p>Follow to get notified when Mugzy goes live!</p>
+                            <a href="https://www.twitch.tv/prince_muggzy" target="_blank" class="btn btn-primary">Go to Channel</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulated Twitch Chat -->
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <span class="chat-title">STREAM CHAT</span>
+                        <span class="chat-users"><i class="fa-solid fa-users"></i></span>
+                    </div>
+                    <div class="chat-messages" id="chat-messages">
+                        <!-- Messages dynamically added by JS -->
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chat-input" placeholder="Send a message to the Slug Pit..." maxlength="100">
+                        <button id="chat-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 MugzySlugs Fan Hub. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.twitch.tv/prince_muggzy" target="_blank" title="Twitch"><i class="fa-brands fa-twitch"></i></a>
+                <a href="https://www.youtube.com/@MugzySlugs" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" title="Discord"><i class="fa-brands fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Web Audio & Player Script -->
+    <script src="script.js"></script>
+</body>
+</html>
