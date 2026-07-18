@@ -1,0 +1,2 @@
+# mugzyslugs
+MugzySlugs website
